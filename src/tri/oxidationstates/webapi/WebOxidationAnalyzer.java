@@ -139,11 +139,11 @@ public class WebOxidationAnalyzer {
 	 */
 	public PageData getPageDataFromComposition(String compositionString, boolean enumeratePossiblePolyanions) {
 		
-		// First we parse the composition and determine how many of each element we have.
-		Composition composition = new Composition(compositionString);
-		
+		Composition composition = null;
 		Map<String, Double> knownIonComposition = null;
 		try {
+			// First we parse the composition and determine how many of each element we have.
+			composition = new Composition(compositionString);
 			knownIonComposition = composition.getKnownIonCompositionMap();
 		} catch (CompositionParseException e) {
 			return error(compositionString, "Failed to parse composition: " + e.getMessage());
