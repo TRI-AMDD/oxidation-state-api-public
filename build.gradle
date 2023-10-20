@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+}
+
+sourceSets.main.java.srcDirs += ['src/tri/oxidationstates']
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.googlecode.efficient-java-matrix-library:ejml:0.25'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation files('lib/matsci.jar')
+    implementation files('lib/structure-mapper.jar')
+}
