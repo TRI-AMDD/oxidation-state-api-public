@@ -2452,13 +2452,20 @@ public class Main {
 		String paramFileName = "input_files/oxidation_boundaries.json";
 		String polyIonDir = "input_files/polyatomic_ions_web";
 		WebOxidationAnalyzer analyzer = new WebOxidationAnalyzer(paramFileName, polyIonDir);
+		
+		// Analyzing oxidation states from composition
 		PageData pageData = analyzer.getPageDataFromComposition("LiMn2O4");
 		
 		// Alternative, for reading structure info from a file
-		/*Path path = Paths.get("PATH_HERE");
-		String fileString = Files.readString(path);
+		/*String fileString = null;
+		Path path = Paths.get("PATH_HERE");
+		try {
+			fileString = Files.readString(path);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 		PageData pageData = analyzer.getPageDataFromStructure(fileString);*/
-		
+
 		System.out.println(pageData);
 	}
 }
