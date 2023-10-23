@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-sourceSets.main.java.srcDirs += ['src/tri/oxidationstates']
+sourceSets.main.java.srcDirs += ['src/global/tri/oxidationstates']
 
 repositories {
     mavenCentral()
