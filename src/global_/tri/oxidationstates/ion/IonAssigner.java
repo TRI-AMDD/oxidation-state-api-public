@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-import global.tri.structure.mapper.GeneralStructureMapper;
+import global_.tri.structure.mapper.GeneralStructureMapper;
 import global_.tri.oxidationstates.calculator.BondValenceCalculator;
 import global_.tri.oxidationstates.calculator.OxidationStateSet;
 import global_.tri.oxidationstates.ion.IonFactory.Ion;

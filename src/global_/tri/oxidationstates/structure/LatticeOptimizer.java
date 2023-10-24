@@ -4,7 +4,7 @@ import matsci.engine.IContinuousFunctionState;
 import matsci.location.Vector;
 import matsci.location.basis.CartesianBasis;
 import matsci.structure.BravaisLattice;
-import global.tri.structure.mapper.GeneralStructureMapper;
+import global_.tri.structure.mapper.GeneralStructureMapper;
 
 /**
  * This class is used to find an "average" lattice given a set of target

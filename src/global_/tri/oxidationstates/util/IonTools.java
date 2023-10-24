@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import global.tri.structure.mapper.GeneralStructureMapper;
+import global_.tri.structure.mapper.GeneralStructureMapper;
 import global_.tri.oxidationstates.structure.LatticeOptimizer;
 import global_.tri.oxidationstates.structure.StructureOptimizer;
 import matsci.Species;

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
-import global.tri.structure.mapper.GeneralStructureMapper;
+import global_.tri.structure.mapper.GeneralStructureMapper;
 import global_.tri.oxidationstates.ion.IonFactory.Ion;
 import global_.tri.oxidationstates.ion.IonFactory.IonType;
 import global_.tri.oxidationstates.util.Composition;
