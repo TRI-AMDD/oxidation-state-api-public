@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-sourceSets.main.java.srcDirs += ['src/global_/tri/oxidationstates']
+sourceSets.main.java.srcDirs += ['src/_global/tri/oxidationstates']
 
 repositories {
     mavenCentral()
@@ -16,3 +16,12 @@ dependencies {
     implementation files('lib/matsci.jar')
     implementation files('lib/structure-mapper.jar')
 }
+
+// Build a fat jar
+jar {
+    duplicatesStrategy = DuplicatesStrategy.WARN
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
