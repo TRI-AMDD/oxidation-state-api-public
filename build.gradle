@@ -17,11 +17,9 @@ dependencies {
     implementation files('lib/structure-mapper.jar')
 }
 
-// Build a fat jar
-jar {
-    duplicatesStrategy = DuplicatesStrategy.WARN
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+// Save the jar files for dependencies
+task saveDependencies(type: Copy){
+    from configurations.runtimeClasspath into "build/dependencies"
 }
+build.dependsOn(saveDependencies)
 
