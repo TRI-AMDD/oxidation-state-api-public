@@ -13,7 +13,6 @@ import _global.tri.structure.mapper.GeneralStructureMapper;
 import matsci.Element;
 import matsci.Species;
 import matsci.structure.PartiallyOccupiedStructure;
-//import matsci.potential.oxidation.OxidationAnalyzer;
 import matsci.structure.Structure;
 import matsci.structure.Structure.Site;
 import matsci.util.MSMath;
@@ -141,6 +140,7 @@ public class IonAssigner {
 		for (Element element : allElements) {
 			oxidationStatesByElement.put(element, new HashSet<Species>());
 		}
+		oxidationStatesByElement.put(Element.vacancy, new HashSet<Species>());
 
 		// First deal with the polyatomic ions
 		for (String ionType : m_SiteIndicesByIonType.keySet()) {
@@ -164,8 +164,13 @@ public class IonAssigner {
 		for (int siteNum = 0; siteNum < structure.numDefiningSites(); siteNum++) {
 
 			Element element = structure.getSiteSpecies(siteNum).getElement();
+			
+			// Handle vacancies
+			if (element == Element.vacancy) {
+				oxidationStatesByElement.get(element).add(Species.vacancy);
+			}
+			
 			// Find the allowed oxidation states
-
 			for (Ion ion : m_StateSet.getIons()) {
 				if (!ion.getIonType().isElement()) {
 					continue;
